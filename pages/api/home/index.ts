@@ -7,11 +7,11 @@ interface Group {
   member_count: number;
 }
 
-interface Data {
+export interface HomeData {
   group_list: Group[];
 }
 
-const data: Data = {
+export const homeData: HomeData = {
   group_list: [
     {
       id: 1,
@@ -53,7 +53,7 @@ const data: Data = {
 
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Data>
+  res: NextApiResponse<HomeData>
 ) {
-  return res.status(200).json(data);
+  return res.status(200).json(homeData);
 }

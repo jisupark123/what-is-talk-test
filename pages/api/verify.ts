@@ -1,6 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';
+import { homeData, HomeData } from './home';
 
-interface Data {
+interface Data extends HomeData {
   auth_provider: string;
   token: string;
   user_id: number;
@@ -12,12 +13,12 @@ let data: Data = {
   token: '1k3jeknwfjn',
   user_id: 1,
   user_name: '김희윤',
+  group_list: homeData.group_list,
 };
 
 export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  console.log('왔다');
   return res.status(200).json(data);
 }
