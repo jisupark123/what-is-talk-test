@@ -11,14 +11,14 @@
 /api/home?userId=number
 /api/home/select?groupId=number(1~3)
 </br>
-</br>
 /api/member?groupId=number(1~3)
 </br>
 /api/member/detail?groupId=number(1~3)&userId=number(1~3)
 </br>
 /api/member/invite?groupId=number(1~3)
 </br>
-</br>
 /api/schedule?groupId=number(1~3)
 </br>
 /api/schedule/detail?scheduleId=number(1~300)
+</br>
+/api/vote
