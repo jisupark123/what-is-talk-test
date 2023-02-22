@@ -12,4 +12,6 @@ export interface Vote {
   anonymousVote: boolean;
   includingDeadline: boolean;
   deadline: Date;
+  creator : String;
+  createDate : Date;
 }
