@@ -9,7 +9,7 @@ interface VoteDetail {
 }
 
 
-const data: VoteDetail[] = [
+export const detailData: VoteDetail[] = [
   {
     voteId: 1,
     categories: [
@@ -94,5 +94,5 @@ const data: VoteDetail[] = [
 ];
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  return res.status(200).json({ votes: data });
+  return res.status(200).json({ votes: detailData });
 }
