@@ -1,5 +1,4 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { Vote } from '../../../data_vote';
 
 const day = 24 * 60 * 60 * 1000;
 const hour = 60 * 60 * 1000;
@@ -10,7 +9,7 @@ interface Data {
   desc: string | null;
   categories: {
       name: string;
-      member: { id: number; name: string; profileImage: string }[];
+      memberCount : number;
   }[];
   multiSelection: boolean;
   anonymousVote: boolean;
@@ -28,11 +27,11 @@ const data: Data[] = [
     categories: [
         {
           name: '찬성',
-          member: [{id:1, name:"김희윤", profileImage:"없어"},{id:2, name:"탑쥐수", profileImage:"없어"}]
+          memberCount : 2
         },
         {
           name: '반대',
-          member: [{id:1, name:"김희윤", profileImage:"없어"}]
+          memberCount: 1
         }
     ],
     multiSelection: false,
@@ -50,12 +49,12 @@ const data: Data[] = [
     categories: [
       {
         name: '찬성',
-        member: [{id:1, name:"김희윤", profileImage:"없어"}]
+        memberCount : 1
       },
       {
         name: '반대',
-        member: [{id:1, name:"김인직", profileImage:"없어"}]
-      }
+        memberCount : 1
+            }
   ],
     multiSelection: false,
     anonymousVote: true,
@@ -72,11 +71,12 @@ const data: Data[] = [
     categories: [
       {
         name: '라면',
-        member: [{id:1, name:"김희윤", profileImage:"없어"},{id:2, name:"탑쥐수", profileImage:"없어"}]
+        memberCount : 2
+      
       },
       {
         name: '국밥',
-        member: [{id:1, name:"송하영", profileImage:"없어"}]
+        memberCount : 1
       }
   ],
     multiSelection: true,
@@ -94,15 +94,15 @@ const data: Data[] = [
     categories: [
       {
         name: '10시',
-        member: [{id:1, name:"김희윤", profileImage:"없어"},{id:2, name:"탑쥐수", profileImage:"없어"}]
+        memberCount : 2
       },
       {
         name: '10시반',
-        member: [{id:1, name:"김희윤", profileImage:"없어"}]
+        memberCount : 1
       },
       {
         name: '12시반',
-        member: [{id:1, name:"김희윤", profileImage:"없어"}]
+        memberCount : 1
       },
     ],
     multiSelection: false,
@@ -120,23 +120,23 @@ const data: Data[] = [
     categories: [
       {
         name: '대마초',
-        member: [{id:1, name:"김희윤", profileImage:"없어"}]
+                memberCount : 1
       },
       {
         name: '코카인',
-        member: [{id:1, name:"김희윤", profileImage:"없어"},{id:2, name:"탑쥐수", profileImage:"없어"}]
+                memberCount : 2
       },
       {
         name: '필로폰',
-        member: [{id:1, name:"김희윤", profileImage:"없어"}]
+                memberCount : 1
       },
       {
         name: '펜타닐',
-        member: [{id:1, name:"김희윤", profileImage:"없어"}]
+                memberCount : 1
       },
       {
         name: '환각 버섯',
-        member: [{id:1, name:"김희윤", profileImage:"없어"},{id:2, name:"탑쥐수", profileImage:"없어"}]
+                memberCount : 2
       },
     ],
     multiSelection: true,
